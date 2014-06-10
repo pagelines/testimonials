@@ -56,11 +56,11 @@
 
 			var theTestimonials = $(this)
 			,	slideNum = theTestimonials.find('.the-testimonial').length
-			,	autoRotate = $(this).data('auto') || true
+			,	autoRotate = $(this).data('auto')
 			,	autoSpeed = parseInt( $(this).data('speed') ) || 6000
 			,	navMode = $(this).data('mode') || 'default'
 			,	navTheme = ( navMode == 'avatar' ) ? 'nav-avatar' : 'nav-theme'
-			
+						
 			theTestimonials
 				.append( sprintf('<div class="controls "><ul class="%s"></ul></div>', navTheme ) )
 				
@@ -92,9 +92,7 @@
 
 			//autorotate
 			if( autoRotate ) {
-				
-				var theRotation = setInterval( function(){ testimonialRotate( theTestimonials ) }, autoSpeed )
-				
+				var theRotation = setInterval( function(){ testimonialRotate( theTestimonials ) }, autoSpeed )				
 			}
 
 			theTestimonials.find('.controls li').click(function(e){
