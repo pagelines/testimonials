@@ -10,7 +10,7 @@
 		//testimonial slider controls
 		$('body').on('click','.pl-testimonials-container .controls li', function( e ){
 
-		//	e.stopPropagation()
+			e.stopPropagation()
 			
 			var theTestimonials = $(this).parents('.pl-testimonials-container')
 			, 	$index = $(this).index()
