@@ -42,7 +42,7 @@ class PLTestimonials extends PageLinesSection {
 				// 				),
 				array(
 					'key'	=> 'testimonials_disable_auto',
-					'label'	=> __( 'Disable Automatically Transition?', 'pagelines' ),
+					'label'	=> __( 'Disable Automatic Transition?', 'pagelines' ),
 					'type'	=> 'check'
 				),
 				array(
