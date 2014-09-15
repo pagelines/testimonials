@@ -8,7 +8,7 @@
 	//	$('.testimonial_slider').animate({'opacity':'1'},800);
 
 		//testimonial slider controls
-		$('body').on('click','.pl-testimonials-container .controls li', function( e ){
+		$('body').on('click testimonal-click','.pl-testimonials-container .controls li', function( e ){
 
 			e.stopPropagation()
 			
@@ -86,34 +86,30 @@
 			})
 
 			theTestimonials
-				.find('.controls ul li')
-				.first()
-				.click()
+			.find('.controls ul li')
+			.first()
+			.click()
 
 			//autorotate
 			if( autoRotate ) {
 				var theRotation = setInterval( function(){ testimonialRotate( theTestimonials ) }, autoSpeed )				
 			}
 
-			theTestimonials.find('.controls li').click(function(e){
-				
+			theTestimonials.find('.controls li').on('testimonal-click', function(e){				
 				if(typeof e.clientX != 'undefined') 
-					clearInterval( theRotation )
-			
-			})
-
-		
+					clearInterval( theRotation )			
+			})			
 		})
-
+		
 		function testimonialRotate(slider){
 
 			var $testimonialLength = slider.find('li').length
 			,	$currentTestimonial = slider.find('.nav-switch.active').index()
 			
 			if( $currentTestimonial+1 == $testimonialLength) {
-				slider.find('ul li:first-child').click();
+				slider.find('ul li:first-child').trigger('testimonal-click');
 			} else {
-				slider.find('.nav-switch.active').next('li').click();
+				slider.find('.nav-switch.active').next('li').trigger('testimonal-click');
 			}
 
 		}
